@@ -2,10 +2,10 @@
 function App() {
 
   return (
-    <>
-    <h1>Hello Osman</h1>
-    </>
-  )
+    <div>
+      <h1>Welcome to my app</h1>
+    </div>
+  );
 }
 
 export default App
