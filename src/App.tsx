@@ -1,11 +1,14 @@
+import "./i18n/config";
+import GithubLink from "./components/sections/GithubLink";
+import Header from "./components/sections/Header";
 
 function App() {
-
   return (
-    <div>
-      <h1>Welcome to my app</h1>
-    </div>
+    <main>
+      <GithubLink />
+      <Header />
+    </main>
   );
 }
 
-export default App
+export default App;
