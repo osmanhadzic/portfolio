@@ -80,7 +80,7 @@ const Header = () => {
             "h-full cursor-pointer text-[50px] text-gray-dark ",
             i18n.language === "bos" && "brightness-50",
           )}
-          icon=""
+          icon="twemoji-flag-for-flag-bosnia-and-herzegovina"
           onClick={() => i18n.changeLanguage("bos")}
         />
       </div>

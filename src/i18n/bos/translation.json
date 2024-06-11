@@ -2,23 +2,16 @@
   "basic_info": {
     "name": "Osman Hadžić",
     "titles": [
-      "Programista front-endu",
-      "Starszy inżynier danych",
-      "Lider zespołu deweloperskiego",
-      "Programista aplikacji mobilnych"
+      "Software developer"
     ],
     "socials": [
       {
         "icon": "mdi:linkedin",
-        "url": "https://www.linkedin.com/in/devmahmud"
+        "url": "https://www.linkedin.com/in/osman-hadzic-6b595a131/"
       },
       {
         "icon": "mdi:github",
-        "url": "https://github.com/devmahmud"
-      },
-      {
-        "icon": "mdi:twitter",
-        "url": "https://twitter.com/expeliermers"
+        "url": "https://github.com/osmanhadzic"
       }
     ]
   },
@@ -183,5 +176,5 @@
       }
     ]
   },
-  "copyright": "Prawo autorskie"
+  "copyright": "Autorska prava"
 }
