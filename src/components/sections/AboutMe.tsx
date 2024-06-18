@@ -1,11 +1,20 @@
 import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
+import { Helmet } from 'react-helmet';
 
 const AboutMe = () => {
   const { t } = useTranslation();
 
   return (
     <section className="py-5 dark:bg-[#7f7f7f] md:py-10">
+      <div>
+      <Helmet>
+        <title>OCode</title>
+        <meta name="description" content="Osman Hadzic, experienced .NET developer specialized in ASP.NET Core, Entity Framework, and SQL Server." />
+        <meta name="keywords" content=".NET developer, ASP.NET, ASP.NET Core, Entity Framework, LINQ, Blazor, Razor Pages, .NET Web API, SignalR, C#, VB.NET, .NET Core, Visual Studio, Visual Studio Code, Azure DevOps, Docker, Kubernetes, SQL Server, MySQL, PostgreSQL, MongoDB, NoSQL" />
+        {/* <link rel="canonical" href="https://www.your-portfolio-site.com/" /> */}
+      </Helmet>
+    </div>
       <h2 className="text-center text-xl font-medium uppercase tracking-widest ">
         {t("about_me.title")}
       </h2>

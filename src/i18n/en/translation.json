@@ -16,9 +16,9 @@
     ]
   },
   "about_me": {
-    "title": "About me",
-    "greeting": "Hi",
-    "content": " 👋 I'm Osman Hadzic.",
+    "title": "o meni",
+    "greeting": "Zdravo",
+    "content": " 👋 Ja sam Osman Hadzic. iskusni .NET developer specijalizovan za ASP.NET Core, Entity Framework, i SQL Server.",
     "image": "myProfile.jpeg",
     "tech_stacks": ["devicon:csharp", "devicon:react", "devicon:postgresql"]
   },
