@@ -13,7 +13,7 @@ const AboutMe = () => {
         <meta name="description" content="Osman Hadzic, experienced .NET developer specialized in ASP.NET Core, Entity Framework, and SQL Server." />
         <meta name="keywords" content=".NET developer" />
         <meta name="robots" content="noindex" />
-        {/* <link rel="canonical" href="https://www.your-portfolio-site.com/" /> */}
+        <link rel="canonical" href="https://example.com"/>
       </Helmet>
     </div>
       <h2 className="text-center text-xl font-medium uppercase tracking-widest ">
