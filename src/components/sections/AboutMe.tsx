@@ -11,7 +11,8 @@ const AboutMe = () => {
       <Helmet>
         <title>OCode</title>
         <meta name="description" content="Osman Hadzic, experienced .NET developer specialized in ASP.NET Core, Entity Framework, and SQL Server." />
-        <meta name="keywords" content=".NET developer, ASP.NET, ASP.NET Core, Entity Framework, LINQ, Blazor, Razor Pages, .NET Web API, SignalR, C#, VB.NET, .NET Core, Visual Studio, Visual Studio Code, Azure DevOps, Docker, Kubernetes, SQL Server, MySQL, PostgreSQL, MongoDB, NoSQL" />
+        <meta name="keywords" content=".NET developer" />
+        <meta name="robots" content="noindex" />
         {/* <link rel="canonical" href="https://www.your-portfolio-site.com/" /> */}
       </Helmet>
     </div>
