@@ -1,0 +1,26 @@
+name: Prettier formater action
+
+on:
+  # Run when pushing to stable branches
+  push:
+    paths:
+      - "client/**"
+      - ".github/workflows/react_app.yaml"
+    branches:
+      - "main"
+  # Run on pull requests matching apps
+  pull_request:
+    paths:
+      - "client/**"
+      - ".github/workflows/react_app.yaml"
+
+jobs:
+  test-build-container:
+    name: Test Container Build
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm ci
+      - name: Check formatting
+        run: npm run check-format
