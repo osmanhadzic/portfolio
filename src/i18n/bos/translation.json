@@ -1,9 +1,7 @@
 {
   "basic_info": {
     "name": "Osman Hadžić",
-    "titles": [
-      "Software developer"
-    ],
+    "titles": ["Software developer"],
     "socials": [
       {
         "icon": "mdi:linkedin",
@@ -29,9 +27,7 @@
         "title": "EMIS",
         "startDate": "2020",
         "description": "",
-        "images": [
-          ""
-        ],
+        "images": [""],
         "url": "https://github.com",
         "technologies": [
           {

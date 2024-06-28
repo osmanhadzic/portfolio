@@ -13,7 +13,6 @@ import "react-vertical-timeline-component/style.min.css";
 import "react-awesome-slider/dist/styles.css";
 import "./index.css";
 
-
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ThemeProvider>

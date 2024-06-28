@@ -1,6 +1,6 @@
 import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
 
 const AboutMe = () => {
   const { t } = useTranslation();
@@ -8,14 +8,17 @@ const AboutMe = () => {
   return (
     <section className="py-5 dark:bg-[#7f7f7f] md:py-10">
       <div>
-      <Helmet>
-        <title>OCode</title>
-        <meta name="description" content="Osman Hadzic, experienced .NET developer specialized in ASP.NET Core, Entity Framework, and SQL Server." />
-        <meta name="keywords" content=".NET developer" />
-        <meta name="robots" content="noindex" />
-        <link rel="canonical" href="https://example.com"/>
-      </Helmet>
-    </div>
+        <Helmet>
+          <title>OCode</title>
+          <meta
+            name="description"
+            content="Osman Hadzic, experienced .NET developer specialized in ASP.NET Core, Entity Framework, and SQL Server."
+          />
+          <meta name="keywords" content=".NET developer" />
+          <meta name="robots" content="noindex" />
+          <link rel="canonical" href="https://example.com" />
+        </Helmet>
+      </div>
       <h2 className="text-center text-xl font-medium uppercase tracking-widest ">
         {t("about_me.title")}
       </h2>
