@@ -16,6 +16,7 @@ const AboutMe = () => {
           />
           <meta name="keywords" content=".NET developer" />
           <meta name="robots" content="noindex" />
+          <meta name="google-site-verification" content="Br1Zq6JSau2WekPpR_bq-M4EpYq55h1K9ASpQzK-T2A" />
           <link rel="canonical" href="https://example.com" />
         </Helmet>
       </div>
