@@ -14,9 +14,9 @@
     ]
   },
   "about_me": {
-    "title": "About me",
-    "greeting": "Hi",
-    "content": " 👋 I'm Osman Hadzic. Experienced .NET developer specialized in ASP.NET Core, Entity Framework, and SQL Server.",
+    "title": "o meni",
+    "greeting": "Zdravo",
+    "content": " 👋 Ja sam Osman Hadzic. iskusni .NET developer specijalizovan za ASP.NET Core, Entity Framework, i SQL Server.",
     "image": "myProfile.jpeg",
     "tech_stacks": ["devicon:csharp", "devicon:react", "devicon:postgresql"]
   },
@@ -31,7 +31,7 @@
         "url": "https://github.com",
         "technologies": [
           {
-            "class": "mdi:vuejs",
+            "class": "mdi:angular",
             "name": "Angular"
           },
           {
@@ -119,5 +119,5 @@
       }
     ]
   },
-  "copyright": "Autorska prava"
+  "copyright": "Copyright"
 }

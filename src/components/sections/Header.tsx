@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { Icon } from "@iconify/react";
 import { TypeAnimation } from "react-type-animation";
 import { ThemeContext, ThemeContextInterface } from "@/contexts";
+import { Helmet } from "react-helmet";
 
 const Header = () => {
   const { darkTheme, toggleTheme } = useContext(
@@ -15,6 +16,18 @@ const Header = () => {
 
   return (
     <>
+      <div>
+        <Helmet>
+          <title>OCode</title>
+          <meta name="keywords" content=".NET developer" />
+          <meta name="robots" content="noindex" />
+          <meta
+            name="google-site-verification"
+            content="LafaBU9N3x5nwtSOc2vnA3on_V776QQIF6zzRRVyNPw"
+          />
+          <link rel="canonical" href="https://example.com" />
+        </Helmet>
+      </div>
       <header className="h-[650px] w-[100%] bg-yellow dark:bg-[#494949]">
         <div className="flex h-full flex-col items-center justify-center gap-5">
           <div>
