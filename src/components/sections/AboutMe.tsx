@@ -1,7 +1,6 @@
 import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import { Button } from "react-bootstrap";
 
 const AboutMe = () => {
   const { t } = useTranslation();
