@@ -1,22 +1,24 @@
 import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
+import { Button } from "react-bootstrap";
 
 const AboutMe = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="py-5 dark:bg-[#7f7f7f] md:py-10">
+    <section className="relativ py-5 dark:bg-[#7f7f7f] md:py-10">
       <div>
         <Helmet>
           <title>OCode</title>
           <meta
             name="description"
-            content="Osman Hadzic, experienced .NET developer specialized in ASP.NET Core, Entity Framework, and SQL Server."
+            content="Osman Hadzic is an experienced .NET developer specializing in ASP.NET Core, Entity Framework, and SQL Server. Discover high-quality .NET development services and solutions."
           />
-          <meta name="keywords" content=".NET developer" />
-          <meta name="robots" content="noindex" />
-
+          <meta
+            name="keywords"
+            content=".NET developer, ASP.NET Core, Entity Framework, SQL Server, software development, backend developer, C#, Microsoft technologies"
+          />
           <link rel="canonical" href="https://osman-hadzic.com/" />
         </Helmet>
       </div>
