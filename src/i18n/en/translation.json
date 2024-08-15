@@ -4,10 +4,12 @@
     "titles": ["Software developer"],
     "socials": [
       {
+        "title":"LinkedIn",
         "icon": "mdi:linkedin",
         "url": "https://www.linkedin.com/in/osman-hadzic-6b595a131/"
       },
       {
+        "title":"GitHub",
         "icon": "mdi:github",
         "url": "https://github.com/osmanhadzic"
       }
@@ -15,7 +17,7 @@
   },
   "about_me": {
     "title": "About me",
-    "greeting": "Hi",
+    "greeting": "Hi :)",
     "content": " 👋 I'm Osman Hadzic. Experienced .NET developer specialized in ASP.NET Core, Entity Framework, and SQL Server.",
     "image": "myProfile.jpeg",
     "tech_stacks": ["devicon:csharp", "devicon:react", "devicon:postgresql"]

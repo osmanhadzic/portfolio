@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="bg-[#1f1f1f] py-5 pt-10  text-center text-white">
       <div className="flex justify-center gap-5">
         {t("basic_info.socials", { returnObjects: true }).map((social) => (
-          <a key={social.icon} href={social.url}>
+          <a key={social.icon} aria-label={social.title} href={social.url}>
             <Icon icon={social.icon} width="22px" />
           </a>
         ))}

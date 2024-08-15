@@ -4,7 +4,7 @@ Welcome to the React Vito App Personal Portfolio project! This README file will 
 
 ## Application deployed using [Netlify](https://www.netlify.com/)
 
-[Until I buy the domain :D](https://osman-hadzic.com/)
+[https://osman-hadzic.com/](https://osman-hadzic.com/)
 
 <h2>🛠️ Installation Steps:</h2>
 

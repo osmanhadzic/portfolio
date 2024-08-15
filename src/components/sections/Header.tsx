@@ -54,27 +54,31 @@ const Header = () => {
             repeat={Infinity}
           />
 
-          <Switch
-            checked={darkTheme}
-            onChange={toggleTheme}
-            offColor="#baaa80"
-            onColor="#353535"
-            className="react-switch mx-auto"
-            width={90}
-            height={40}
-            uncheckedIcon={
-              <Icon
-                className="ml-5 h-full text-end text-[25px] text-gray-dark"
-                icon="twemoji:owl"
-              />
-            }
-            checkedIcon={
-              <Icon
-                className="ml-5 h-full text-end text-[25px] text-gray-dark"
-                icon="noto-v1:sun-with-face"
-              />
-            }
-          />
+          <label htmlFor="themeSwitch" className="flex items-center">
+            <span className="sr-only">Toggle dark theme</span> {/* Screen reader-only label */}
+            <Switch
+              id="themeSwitch"
+              checked={darkTheme}
+              onChange={toggleTheme}
+              offColor="#baaa80"
+              onColor="#353535"
+              className="react-switch mx-auto"
+              width={90}
+              height={40}
+              uncheckedIcon={
+                <Icon
+                  className="ml-5 h-full text-end text-[25px] text-gray-dark"
+                  icon="twemoji:owl"
+                />
+              }
+              checkedIcon={
+                <Icon
+                  className="ml-5 h-full text-end text-[25px] text-gray-dark"
+                  icon="noto-v1:sun-with-face"
+                />
+              }
+            />
+          </label>
         </div>
       </header>
 
@@ -86,6 +90,7 @@ const Header = () => {
           )}
           icon="twemoji-flag-for-flag-united-kingdom"
           onClick={() => i18n.changeLanguage("en")}
+          aria-label="Change language to English" // Accessibility label
         />
         <Icon
           className={clsx(
@@ -94,6 +99,7 @@ const Header = () => {
           )}
           icon="twemoji-flag-for-flag-bosnia-and-herzegovina"
           onClick={() => i18n.changeLanguage("bos")}
+          aria-label="Change language to Bosnian" // Accessibility label
         />
       </div>
     </>

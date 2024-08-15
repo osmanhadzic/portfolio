@@ -2,6 +2,7 @@ const GithubLink = () => {
   return (
     <a
       href="https://github.com/osmanhadzic"
+      aria-label="GitHub osmanhadzic"
       className="cursor-pointer"
       target="_blank"
     >
