@@ -55,7 +55,8 @@ const Header = () => {
           />
 
           <label htmlFor="themeSwitch" className="flex items-center">
-            <span className="sr-only">Toggle dark theme</span> {/* Screen reader-only label */}
+            <span className="sr-only">Toggle dark theme</span>{" "}
+            {/* Screen reader-only label */}
             <Switch
               id="themeSwitch"
               checked={darkTheme}

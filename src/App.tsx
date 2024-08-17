@@ -5,6 +5,7 @@ import Footer from "./components/sections/Footer";
 import AboutMe from "./components/sections/AboutMe";
 import Experience from "./components/sections/Experience";
 import Skills from "./components/sections/Skills";
+import Resume from "./components/sections/Resume";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <GithubLink />
       <Header />
       <AboutMe />
+      <Resume />
       <Experience />
       <Skills />
       <Footer />

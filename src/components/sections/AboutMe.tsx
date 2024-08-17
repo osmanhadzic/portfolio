@@ -6,7 +6,7 @@ const AboutMe = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="relative py-5 bg-gray-800 dark:bg-gray-900 md:py-10">
+    <section className="bg-gray-800 dark:bg-gray-900 relative py-5 md:py-10">
       <div>
         <Helmet>
           <title>OCode</title>
@@ -21,13 +21,13 @@ const AboutMe = () => {
           <link rel="canonical" href="https://osman-hadzic.com/" />
         </Helmet>
       </div>
-      <h2 className="text-center text-xl font-medium uppercase tracking-widest text-gray-100 dark:text-gray-200">
+      <h2 className="text-gray-100 dark:text-gray-200 text-center text-xl font-medium uppercase tracking-widest">
         {t("about_me.title")}
       </h2>
 
       <div className="flex flex-col items-center justify-center gap-10 px-10 pb-10 md:flex-row md:pb-0">
         <div className="text-center md:w-1/3">
-          <div className="mb-[30px] mt-[55px] inline-block p-4 pb-10 shadow-card bg-gray-100 dark:bg-gray-800">
+          <div className="bg-gray-100 dark:bg-gray-800 mb-[30px] mt-[55px] inline-block p-4 pb-10 shadow-card">
             <img
               src={`images/${t("about_me.image")}`}
               alt="Profile"
@@ -51,14 +51,14 @@ const AboutMe = () => {
           </div>
         </div>
         <div className="md:w-2/3">
-          <div className="rounded-sm border border-gray-600 dark:border-gray-700">
-            <div className="flex items-center gap-3 border-b border-gray-600 dark:border-gray-700 bg-gray-200 dark:bg-gray-800 px-3 py-2">
+          <div className="border-gray-600 dark:border-gray-700 rounded-sm border">
+            <div className="border-gray-600 dark:border-gray-700 bg-gray-200 dark:bg-gray-800 flex items-center gap-3 border-b px-3 py-2">
               <Icon icon="emojione:red-circle" width={10} />
               <Icon icon="twemoji:yellow-circle" width={10} />
               <Icon icon="twemoji:green-circle" width={10} />
             </div>
             <div
-              className="p-3 text-justify text-gray-800 dark:text-gray-300"
+              className="text-gray-800 dark:text-gray-300 p-3 text-justify"
               style={{
                 height: "auto",
                 fontSize: "132%",
@@ -67,11 +67,11 @@ const AboutMe = () => {
             >
               <br />
               <span className="text-xl font-medium dark:text-white">
-                {t("about_me.greeting")} :){" "}
+                {t("about_me.greeting")}{" "}
               </span>
               <br />
               <br />
-              <p className="text-sm font-medium dark:text-gray-300">
+              <p className="dark:text-gray-300 text-sm font-medium">
                 {t("about_me.content")}
               </p>
             </div>

@@ -4,12 +4,12 @@
     "titles": ["Software developer"],
     "socials": [
       {
-        "title":"LinkedIn",
+        "title": "LinkedIn",
         "icon": "mdi:linkedin",
         "url": "https://www.linkedin.com/in/osman-hadzic-6b595a131/"
       },
       {
-        "title":"GitHub",
+        "title": "GitHub",
         "icon": "mdi:github",
         "url": "https://github.com/osmanhadzic"
       }
@@ -120,6 +120,9 @@
         "technologies": ["Dotnet", "C#", "Vue.js", "JavaScript"]
       }
     ]
+  },
+  "resume": {
+    "title": "Download CV"
   },
   "copyright": "Copyright"
 }
