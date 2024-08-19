@@ -8,8 +8,8 @@ const Resume = () => {
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href =
-      "https://drive.google.com/file/d/1AMwGjXXXTEDfZG1mjfFOxHJu5kZzamee/view?usp=sharing"; // Replace with the actual path to the CV file
-    link.download = "Osman_Hadzic_CV.pdf"; // The name of the downloaded file
+      "https://drive.google.com/file/d/1TvYg9Dp70g-_V69qHfSt-C1gzGOU84g1/view?usp=sharing";
+    link.download = "Osman_Hadzic_CV.pdf";
     link.target = "_blank";
     link.click();
   };
