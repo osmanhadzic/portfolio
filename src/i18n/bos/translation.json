@@ -18,7 +18,7 @@
   "about_me": {
     "title": "o meni",
     "greeting": "Zdravo :)",
-    "content": " 👋 Ja sam Osman Hadzic. iskusni .NET developer specijalizovan za ASP.NET Core, Entity Framework, i SQL Server.",
+    "content": "👋 Ja sam Osman Hadžić, softverski developer koji voli da se igra sa .NET i IoT. Moglo bi se reći da imam talent za pretvaranje kafe u kod—iako ponekad izgleda kao da više prosipam kafu po tastaturi nego što zapravo kodiram!\n\nTokom godina, radio sam na raznim projektima, a najviše uživam u izazovima stvaranja efikasnih i inovativnih rješenja. Baš kao što Linus Torvalds vjeruje u snagu zajednice, i ja vjerujem da najbolje ideje dolaze iz saradnje (uz malo prijateljske rasprave).\n\nMoj fokus je na razvoju softvera, i trudim se da postignem jednostavnost i jasnoću u svom kodu—naposlijetku, niko ne želi da dešifruje hijeroglife u 2 ujutro! Kada nisam zauzet kodiranjem, volim učiti i dijeliti znanje. Smatram se prijateljskim developerom, uvijek spremnim da pomognem (ili dam savjet za debagovanje).\n\nDakle, ako imaš zanimljiv projekat ili samo želiš popričati o tehnologiji (ili kafi), slobodno se javi!\n",
     "image": "myProfile.jpeg",
     "tech_stacks": ["devicon:csharp", "devicon:react", "devicon:postgresql"]
   },
@@ -116,7 +116,7 @@
         "title": "Full stack developer",
         "years": "10.2020 - 02.2022",
         "mainTech": "React",
-        "mainTechIcon": "mdi:react",
+        "mainTechIcon": "devicon:csharp",
         "technologies": ["Dotnet", "C#", "Vue.js", "JavaScript"]
       }
     ]
