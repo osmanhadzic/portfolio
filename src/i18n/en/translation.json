@@ -18,7 +18,7 @@
   "about_me": {
     "title": "About me",
     "greeting": "Hi :)",
-    "content": " 👋 I'm Osman Hadzic. Experienced .NET developer specialized in ASP.NET Core, Entity Framework, and SQL Server.",
+    "content": "👋 Hi, I'm Osman Hadžić, a software developer who enjoys playing around with .NET and IoT. You could say I have a knack for turning coffee into code—though sometimes it feels like I spill more coffee on the keyboard than I actually write code!\n\nOver the years, I've worked on various projects, and I particularly enjoy the challenges of creating efficient and innovative solutions. Just as Linus Torvalds believes in the power of community, I believe the best ideas come from collaboration (with a dash of friendly debate).\n\nMy focus is on software development, and I strive for simplicity and clarity in my code—after all, nobody wants to decipher hieroglyphics at 2 a.m.! When I'm not busy coding, I enjoy learning and sharing knowledge. I consider myself a friendly developer, always ready to help (or give debugging advice).\n\nSo, if you have an interesting project or just want to chat about technology (or coffee), feel free to reach out!\n",
     "image": "myProfile.jpeg",
     "tech_stacks": ["devicon:csharp", "devicon:react", "devicon:postgresql"]
   },
