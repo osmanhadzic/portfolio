@@ -109,7 +109,9 @@
           "Postgres",
           "EF Core",
           ".NET Core"
-        ]
+        ],
+        "location": "Tuzla, Bosnia and Herzegovina",
+        "description": "Working on various projects, mostly in the field of IoT and web development."
       },
       {
         "company": "Orbicode d.o.o",
@@ -117,7 +119,9 @@
         "years": "10.2020 - 02.2022",
         "mainTech": "React",
         "mainTechIcon": "mdi:react",
-        "technologies": ["Dotnet", "C#", "Vue.js", "JavaScript"]
+        "technologies": ["Dotnet", "C#", "Vue.js", "JavaScript"],
+        "location": "Sarajevo, Bosnia and Herzegovina",
+        "description": "Working on various projects for school management system."
       }
     ]
   },

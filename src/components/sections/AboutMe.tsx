@@ -12,11 +12,11 @@ const AboutMe = () => {
           <title>OCode</title>
           <meta
             name="description"
-            content="Osman Hadzic is an experienced .NET developer specializing in ASP.NET Core, Entity Framework, and SQL Server. Discover high-quality .NET development services and solutions."
+            content="Osman Hadzic is an experienced .NET developer based in the USA, specializing in ASP.NET Core, Entity Framework, and SQL Server. Discover high-quality .NET development services and solutions for your business."
           />
           <meta
             name="keywords"
-            content=".NET developer, ASP.NET Core, Entity Framework, SQL Server, software development, backend developer, C#, Microsoft technologies"
+            content=".NET developer USA, ASP.NET Core developer USA, Entity Framework developer USA, SQL Server developer USA, software development USA, backend developer USA, C# developer USA, Microsoft technologies USA"
           />
           <link rel="canonical" href="https://osman-hadzic.com/" />
         </Helmet>
@@ -71,7 +71,7 @@ const AboutMe = () => {
               </span>
               <br />
               <br />
-              <p className="dark:text-gray-300 text-sm font-medium">
+              <p className="dark:text-gray-300 text-sl font-small font-mono">
                 {t("about_me.content")}
               </p>
             </div>

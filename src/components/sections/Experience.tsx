@@ -33,8 +33,6 @@ const Experience = () => {
             iconClassName="bg-[#AE944F] text-white dark:bg-[#919191]"
             icon={<Icon icon={exp.mainTechIcon} />}
             className="dark:brightness-80 dark:filter"
-
-            // contentStyle={{ filter: "brightness(80%)" }}
           >
             <Badge text={exp.mainTech} />
 
@@ -45,6 +43,9 @@ const Experience = () => {
                 <Badge key={tech} text={tech} />
               ))}
             </div>
+            <p className="mt-2 text-sm">
+              {exp.description} - {exp.location}
+            </p>
           </VerticalTimelineElement>
         ))}
         <VerticalTimelineElement

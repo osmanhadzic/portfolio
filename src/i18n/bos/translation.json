@@ -98,8 +98,8 @@
     "experiences": [
       {
         "company": "Seco BH d.o.o",
-        "title": "Software Developer",
-        "years": "02.2022 - present",
+        "title": "Softverski Developer",
+        "years": "02.2022 - sada",
         "mainTech": ".NET,C#,React",
         "mainTechIcon": "devicon:csharp",
         "technologies": [
@@ -109,7 +109,9 @@
           "Postgres",
           "EF Core",
           ".NET Core"
-        ]
+        ],
+        "location": "Tuzla, Bosna i Hercegovina",
+        "description": "Rad na raznim projektima, uglavnom u oblasti IoT i web razvoja."
       },
       {
         "company": "Orbicode d.o.o",
@@ -117,7 +119,9 @@
         "years": "10.2020 - 02.2022",
         "mainTech": "React",
         "mainTechIcon": "devicon:csharp",
-        "technologies": ["Dotnet", "C#", "Vue.js", "JavaScript"]
+        "technologies": ["Dotnet", "C#", "Vue.js", "JavaScript", "SQL"],
+        "location": "Sarajevo, Bosna i Hercegovina",
+        "description": "Rad na raznim projektima za sistem upravljanja školama."
       }
     ]
   },
