@@ -1,6 +1,6 @@
 import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
-import { Helmet } from "react-helmet";
+import { HelmetProvider, Helmet } from "react-helmet-async";
 
 const AboutMe = () => {
   const { t } = useTranslation();
@@ -8,6 +8,7 @@ const AboutMe = () => {
   return (
     <section className="bg-gray-800 dark:bg-gray-900 relative py-5 md:py-10">
       <div>
+        <HelmetProvider>
         <Helmet>
           <title>OCode</title>
           <meta
@@ -20,6 +21,7 @@ const AboutMe = () => {
           />
           <link rel="canonical" href="https://osman-hadzic.com/" />
         </Helmet>
+        </HelmetProvider>
       </div>
       <h2 className="text-gray-100 dark:text-gray-200 text-center text-xl font-medium uppercase tracking-widest">
         {t("about_me.title")}

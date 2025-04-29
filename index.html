@@ -51,72 +51,94 @@
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <!-- Cookie Consent Banner -->
-    <div
-      id="cookie-consent-banner"
+    <!-- Cookie Consent Dialog -->
+    <dialog
+      id="cookie-consent-dialog"
       style="
-        display: none;
-        position: fixed;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 90%;
-        max-width: 500px;
-        background: #333;
-        color: #fff;
-        padding: 15px 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-        font-family: Arial, sans-serif;
+      border: none;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 400px;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #000000;
       "
     >
-      <p style="margin: 0; font-size: 14px; line-height: 1.5">
-        This website uses cookies to ensure you get the best experience on our
-        website.
-        <a
-          href="/privacy-policy"
-          style="color: #f1d600; text-decoration: underline; margin-left: 5px"
-        >
-          Learn more
-        </a>
+      <h2 style="margin: 0 0 10px; font-size: 18px; color: #000000">
+      Cookie and Privacy Policy
+      </h2>
+      <p
+      style="margin: 0 0 15px; font-size: 14px; line-height: 1.5; color: #333333"
+      >
+      This website uses cookies to ensure you get the best experience on our
+      website. By continuing to use this site, you agree to our
+      <a
+      href="/public/privacy-policy.html"
+      target="_blank"
+      style="color: #0056b3; text-decoration: underline"
+      >Privacy Policy</a
+      >. You can also choose to browse without third-party cookies by adjusting your browser settings.
       </p>
-      <div style="margin-top: 10px; text-align: right">
-        <button
-          id="accept-cookies"
-          style="
-            padding: 8px 15px;
-            background: #f1d600;
-            color: #333;
-            border: none;
-            border-radius: 5px;
-            font-size: 14px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background 0.3s ease;
-          "
-          onmouseover="this.style.background='#e5c700';"
-          onmouseout="this.style.background='#f1d600';"
-        >
-          Accept
-        </button>
+      <div style="text-align: right">
+      <button
+      id="accept-dialog"
+      style="
+      padding: 8px 15px;
+      background: #218838;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-right: 10px;
+      "
+      >
+      Accept
+      </button>
+      <button
+      id="decline-dialog"
+      style="
+      padding: 8px 15px;
+      background: #c82333;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+      font-weight: bold;
+      "
+      >
+      Decline
+      </button>
       </div>
-    </div>
+    </dialog>
 
     <script>
       // Check if cookies have already been accepted
       if (!localStorage.getItem("cookiesAccepted")) {
-        document.getElementById("cookie-consent-banner").style.display =
-          "block";
+        const dialog = document.getElementById("cookie-consent-dialog");
+        dialog.showModal(); // Show the dialog box
       }
 
       // Handle the "Accept" button click
       document
-        .getElementById("accept-cookies")
+        .getElementById("accept-dialog")
         .addEventListener("click", function () {
           localStorage.setItem("cookiesAccepted", "true");
-          document.getElementById("cookie-consent-banner").style.display =
-            "none";
+          document.getElementById("cookie-consent-dialog").close(); // Close the dialog box
+        });
+
+      // Handle the "Decline" button click
+      document
+        .getElementById("decline-dialog")
+        .addEventListener("click", function () {
+          alert(
+            "You have declined cookies. Some features may not work as expected.",
+          );
+          document.getElementById("cookie-consent-dialog").close(); // Close the dialog box
         });
     </script>
   </body>

@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { Icon } from "@iconify/react";
 import { TypeAnimation } from "react-type-animation";
 import { ThemeContext, ThemeContextInterface } from "@/contexts";
-import { Helmet } from "react-helmet";
+import { HelmetProvider, Helmet } from "react-helmet-async";
 
 const Header = () => {
   const { darkTheme, toggleTheme } = useContext(
@@ -16,7 +16,8 @@ const Header = () => {
 
   return (
     <>
-      <div>
+      <div>ž
+        <HelmetProvider>
         <Helmet>
           <title>OCode</title>
           <meta name="keywords" content=".NET developer" />
@@ -26,6 +27,7 @@ const Header = () => {
           />
           <link rel="canonical" href="https://osman-hadzic.com/" />
         </Helmet>
+        </HelmetProvider>
       </div>
       <header className="h-[650px] w-[100%] bg-yellow dark:bg-[#494949]">
         <div className="flex h-full flex-col items-center justify-center gap-5">
