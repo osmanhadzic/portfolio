@@ -117,8 +117,8 @@
         "company": "Orbicode d.o.o",
         "title": "Full stack developer",
         "years": "10.2020 - 02.2022",
-        "mainTech": "React",
-        "mainTechIcon": "mdi:react",
+        "mainTech": "devicon:csharp",
+        "mainTechIcon": "devicon:csharp",
         "technologies": ["Dotnet", "C#", "Vue.js", "JavaScript"],
         "location": "Sarajevo, Bosnia and Herzegovina",
         "description": "Working on various projects for school management system."
