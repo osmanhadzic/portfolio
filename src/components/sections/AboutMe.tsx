@@ -9,18 +9,18 @@ const AboutMe = () => {
     <section className="bg-gray-800 dark:bg-gray-900 relative py-5 md:py-10">
       <div>
         <HelmetProvider>
-        <Helmet>
-          <title>OCode</title>
-          <meta
-            name="description"
-            content="Osman Hadzic is an experienced .NET developer based in the USA, specializing in ASP.NET Core, Entity Framework, and SQL Server. Discover high-quality .NET development services and solutions for your business."
-          />
-          <meta
-            name="keywords"
-            content=".NET developer USA, ASP.NET Core developer USA, Entity Framework developer USA, SQL Server developer USA, software development USA, backend developer USA, C# developer USA, Microsoft technologies USA"
-          />
-          <link rel="canonical" href="https://osman-hadzic.com/" />
-        </Helmet>
+          <Helmet>
+            <title>OCode</title>
+            <meta
+              name="description"
+              content="Osman Hadzic is an experienced .NET developer based in the USA, specializing in ASP.NET Core, Entity Framework, and SQL Server. Discover high-quality .NET development services and solutions for your business."
+            />
+            <meta
+              name="keywords"
+              content=".NET developer USA, ASP.NET Core developer USA, Entity Framework developer USA, SQL Server developer USA, software development USA, backend developer USA, C# developer USA, Microsoft technologies USA"
+            />
+            <link rel="canonical" href="https://osman-hadzic.com/" />
+          </Helmet>
         </HelmetProvider>
       </div>
       <h2 className="text-gray-100 dark:text-gray-200 text-center text-xl font-medium uppercase tracking-widest">
@@ -68,7 +68,7 @@ const AboutMe = () => {
               }}
             >
               <br />
-              <span className="text-xl font-medium dark:text-white">
+              <span className="dark:text-gray-300 font-mono text-xl font-medium">
                 {t("about_me.greeting")}{" "}
               </span>
               <br />

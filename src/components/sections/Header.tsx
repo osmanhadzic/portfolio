@@ -16,17 +16,17 @@ const Header = () => {
 
   return (
     <>
-      <div>ž
+      <div>
         <HelmetProvider>
-        <Helmet>
-          <title>OCode</title>
-          <meta name="keywords" content=".NET developer" />
-          <meta
-            name="google-site-verification"
-            content="LafaBU9N3x5nwtSOc2vnA3on_V776QQIF6zzRRVyNPw"
-          />
-          <link rel="canonical" href="https://osman-hadzic.com/" />
-        </Helmet>
+          <Helmet>
+            <title>OCode</title>
+            <meta name="keywords" content=".NET developer" />
+            <meta
+              name="google-site-verification"
+              content="LafaBU9N3x5nwtSOc2vnA3on_V776QQIF6zzRRVyNPw"
+            />
+            <link rel="canonical" href="https://osman-hadzic.com/" />
+          </Helmet>
         </HelmetProvider>
       </div>
       <header className="h-[650px] w-[100%] bg-yellow dark:bg-[#494949]">
