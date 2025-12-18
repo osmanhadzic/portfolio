@@ -1,23 +1,17 @@
 import "./i18n/config";
-import GithubLink from "./components/sections/GithubLink";
-import Header from "./components/sections/Header";
-import Footer from "./components/sections/Footer";
-import AboutMe from "./components/sections/AboutMe";
-import Experience from "./components/sections/Experience";
-import Skills from "./components/sections/Skills";
-import Resume from "./components/sections/Resume";
+import { Navigate, Route, Routes } from "react-router-dom";
+import HomePage from "@/pages/HomePage";
+import BlogIndexPage from "@/pages/BlogIndexPage";
+import BlogPostPage from "@/pages/BlogPostPage";
 
 function App() {
   return (
-    <main>
-      <GithubLink />
-      <Header />
-      <AboutMe />
-      <Resume />
-      <Experience />
-      <Skills />
-      <Footer />
-    </main>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/blog" element={<BlogIndexPage />} />
+      <Route path="/blog/:slug" element={<BlogPostPage />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   );
 }
 
