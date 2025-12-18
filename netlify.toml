@@ -1,3 +1,15 @@
 [build]
   command = "npm run build"
   publish = "dist"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Best-effort hints to search/indexing agents.
+    # (Does not stop scraping; compliant bots may respect it.)
+    X-Robots-Tag = "noai, noimageai, nosnippet"
+
+    # Basic hardening headers (generally safe for static sites).
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
