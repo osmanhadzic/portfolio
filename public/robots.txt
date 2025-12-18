@@ -1,3 +1,34 @@
-User-agent: *
-Disallow: /private/
-Allow: /
+# Best-effort blocks for common AI / large-scale scrapers.
+# NOTE: These are voluntary; malicious scrapers can ignore robots.txt.
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: omgili
+Disallow: /
+
+User-agent: omgilibot
+Disallow: /
+
+# Keep sitemap discoverable for normal search engines.
+Sitemap: https://ocode.dev/sitemap.xml
