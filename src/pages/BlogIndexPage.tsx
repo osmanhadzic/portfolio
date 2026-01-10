@@ -13,51 +13,52 @@ export default function BlogIndexPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-800 dark:bg-gray-900 py-10">
-      <div className="mx-auto flex w-full justify-center px-4 sm:px-6 lg:px-8">
-        <div className="w-full max-w-5xl">
-        <div className="mb-8 flex items-center justify-between gap-4">
-          <h1 className="text-3xl font-bold text-gray-100 dark:text-gray-200">
+    <section className="bg-yellow dark:bg-[#494949] py-10 px-4 sm:px-6 lg:px-8 min-h-screen">
+      <div className="max-w-5xl mx-auto">
+        {/* Header */}
+        <div className="mb-10">
+          <h2 className="text-gray-dark dark:text-white text-center text-xl font-medium uppercase tracking-widest mb-6">
             Blog
-          </h1>
-
-          <Link
-            to="/"
-            className="rounded border border-gray-600 px-4 py-2 text-sm font-medium text-gray-100 hover:bg-gray-dark dark:border-gray-700 dark:hover:bg-gray-800"
-          >
-            Home
-          </Link>
+          </h2>
+          
+          <div className="text-center mb-8">
+            <Link
+              to="/"
+              className="inline-block rounded-sm border border-gray-dark dark:border-white bg-white dark:bg-gray-dark px-6 py-2 text-sm font-medium text-gray-dark dark:text-white hover:shadow-card-hover transition-shadow shadow-card"
+            >
+              Back to Home
+            </Link>
+          </div>
         </div>
 
-        <div className="rounded-sm border border-gray-600 bg-gray-200 p-4 shadow-card dark:border-gray-700 dark:bg-gray-800">
-          {posts.length === 0 ? (
-            <p className="py-6 text-center text-sm text-gray-700 dark:text-gray-300">
-              No posts yet.
-            </p>
-          ) : (
-            <div className="space-y-3">
-              {posts.map((post) => (
-                <article key={post.slug}>
-                  <Link
-                    to={`/blog/${post.slug}`}
-                    className="block rounded-sm border border-gray-600 bg-white/60 p-5 hover:bg-white dark:border-gray-700 dark:bg-gray-900/40 dark:hover:bg-gray-900"
-                  >
-                    <div className="flex items-start justify-between gap-4">
-                      <h2 className="text-lg font-semibold text-gray-dark dark:text-gray-100">
-                        {post.title}
-                      </h2>
-                      <span className="shrink-0 text-xs font-mono text-gray-600 dark:text-gray-300">
-                        {post.date}
-                      </span>
-                    </div>
-                  </Link>
-                </article>
-              ))}
-            </div>
-          )}
+        {/* Posts */}
+        <div className="space-y-6">
+          {posts.map((post) => (
+            <article key={post.slug}>
+              <div className="rounded-sm border border-gray-dark dark:border-white bg-white dark:bg-gray-dark shadow-card overflow-hidden">
+                <Link 
+                  to={`/blog/${post.slug}`} 
+                  className="block p-6 hover:shadow-card-hover transition-shadow"
+                >
+                  <h3 className="text-2xl font-semibold text-gray-dark dark:text-white mb-2">
+                    {post.title}
+                  </h3>
+                  <p className="text-sm font-mono text-gray dark:text-gray-light">
+                    {post.date}
+                  </p>
+                </Link>
+              </div>
+            </article>
+          ))}
         </div>
+
+        {/* Empty state */}
+        {posts.length === 0 && (
+          <div className="rounded-sm border border-gray-dark dark:border-white bg-white dark:bg-gray-dark shadow-card p-10 text-center">
+            <p className="text-gray-dark dark:text-white">No posts yet. Check back soon!</p>
+          </div>
+        )}
       </div>
-      </div>
-    </div>
+    </section>
   );
 }
