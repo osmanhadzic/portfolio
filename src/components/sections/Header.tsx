@@ -6,6 +6,7 @@ import { Icon } from "@iconify/react";
 import { TypeAnimation } from "react-type-animation";
 import { ThemeContext, ThemeContextInterface } from "@/contexts";
 import { HelmetProvider, Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const { darkTheme, toggleTheme } = useContext(
@@ -55,6 +56,15 @@ const Header = () => {
             className="text-regular text-2xl text-gray-dark dark:text-white"
             repeat={Infinity}
           />
+
+          <Link
+            to="/blog"
+            aria-label="Open blog"
+            className="inline-flex items-center gap-2 rounded border border-gray-dark px-6 py-2 text-gray-dark shadow-card hover:shadow-card-hover dark:border-white dark:text-white"
+          >
+            <Icon icon="la:newspaper" className="text-[20px]" />
+            <span className="font-medium">Blog</span>
+          </Link>
 
           <label htmlFor="themeSwitch" className="flex items-center">
             <span className="sr-only">Toggle dark theme</span>{" "}
