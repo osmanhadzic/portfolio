@@ -1,4 +1,4 @@
-import { Icon } from "@iconify/react";
+import { Icon } from "@iconify/react/dist/offline";
 import { Link } from "react-router-dom";
 
 const BlogLink = () => {
