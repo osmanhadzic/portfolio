@@ -1,4 +1,26 @@
-import matter from "gray-matter";
+type MatterParsed = {
+  data: Record<string, unknown>;
+  content: string;
+};
+
+type MatterFn = (input: string) => MatterParsed;
+
+let cachedMatter: MatterFn | null = null;
+
+async function getMatter(): Promise<MatterFn> {
+  if (cachedMatter) return cachedMatter;
+
+  // Some gray-matter dependencies assume Buffer exists in the browser.
+  if (typeof window !== "undefined" && !(window as any).Buffer) {
+    const { Buffer } = await import("buffer");
+    (window as any).Buffer = Buffer;
+  }
+
+  const module = await import("gray-matter");
+  const matter = ((module as any).default ?? module) as MatterFn;
+  cachedMatter = matter;
+  return matter;
+}
 
 export interface BlogPost {
   slug: string;
@@ -21,13 +43,19 @@ const loadersBySlug: Record<string, MarkdownImport> = Object.fromEntries(
   }),
 );
 
-function parsePost(slug: string, raw: string): BlogPost {
+async function parsePost(slug: string, raw: string): Promise<BlogPost> {
+  const matter = await getMatter();
   const parsed = matter(raw);
+
+  const title =
+    typeof parsed.data["title"] === "string" ? parsed.data["title"] : "Untitled";
+  const date =
+    typeof parsed.data["date"] === "string" ? parsed.data["date"] : "No date";
 
   return {
     slug,
-    title: parsed.data.title || "Untitled",
-    date: parsed.data.date || "No date",
+    title,
+    date,
     content: parsed.content,
   };
 }

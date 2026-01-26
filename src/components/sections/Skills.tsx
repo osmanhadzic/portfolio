@@ -1,4 +1,5 @@
-import { Icon } from "@iconify/react";
+import "@/icons/register-skills";
+import { Icon } from "@iconify/react/dist/offline";
 import { useTranslation } from "react-i18next";
 
 const Skills = () => {
