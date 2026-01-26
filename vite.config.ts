@@ -6,6 +6,11 @@ import path from "path";
 export default defineConfig({
   plugins: [react()],
   base: "/",
+  build: {
+    // Lighthouse flags minification/unused JS heavily; production builds should be minified.
+    minify: "esbuild",
+    sourcemap: "hidden",
+  },
   define: {
     global: "globalThis",
   },

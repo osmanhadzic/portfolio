@@ -1,8 +1,10 @@
+import "react-vertical-timeline-component/style.min.css";
+import "@/icons/register-experience";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
-import { Icon } from "@iconify/react";
+import { Icon } from "@iconify/react/dist/offline";
 import { useTranslation } from "react-i18next";
 
 interface BadgeProps {
