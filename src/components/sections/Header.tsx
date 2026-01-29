@@ -65,12 +65,6 @@ const Header = () => {
               name="google-site-verification"
               content="LafaBU9N3x5nwtSOc2vnA3on_V776QQIF6zzRRVyNPw"
             />
-            <link rel="canonical" href="https://osman-hadzic.com/" />
-            <link rel="canonical" href="https://osman-hadzic.com/blog" />
-            <link
-              rel="canonical"
-              href="https://osman-hadzic.com/blog/hello-world"
-            />
           </Helmet>
         </HelmetProvider>
       </div>
