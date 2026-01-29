@@ -20,7 +20,10 @@ export default function LazyOnVisible({
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    if (typeof window === "undefined" || typeof IntersectionObserver === "undefined") {
+    if (
+      typeof window === "undefined" ||
+      typeof IntersectionObserver === "undefined"
+    ) {
       if (fallbackToRender) setIsVisible(true);
       return;
     }

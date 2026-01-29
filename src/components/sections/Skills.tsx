@@ -11,7 +11,7 @@ const Skills = () => {
         {t("skills.title")}
       </h2>
 
-      <ul className="flex flex-wrap justify-center  gap-4">
+      <ul className="flex flex-wrap justify-center gap-4">
         {t("skills.icons", { returnObjects: true }).map((skill) => (
           <li
             key={skill.name}

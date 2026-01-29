@@ -48,7 +48,9 @@ async function parsePost(slug: string, raw: string): Promise<BlogPost> {
   const parsed = matter(raw);
 
   const title =
-    typeof parsed.data["title"] === "string" ? parsed.data["title"] : "Untitled";
+    typeof parsed.data["title"] === "string"
+      ? parsed.data["title"]
+      : "Untitled";
   const date =
     typeof parsed.data["date"] === "string" ? parsed.data["date"] : "No date";
 

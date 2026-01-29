@@ -24,6 +24,11 @@ const AboutMe = () => {
               content=".NET developer USA, ASP.NET Core developer USA, Entity Framework developer USA, SQL Server developer USA, software development USA, backend developer USA, C# developer USA, Microsoft technologies USA"
             />
             <link rel="canonical" href="https://osman-hadzic.com/" />
+            <link rel="canonical" href="https://osman-hadzic.com/blog" />
+            <link
+              rel="canonical"
+              href="https://osman-hadzic.com/blog/hello-world"
+            />
           </Helmet>
         </HelmetProvider>
       </div>

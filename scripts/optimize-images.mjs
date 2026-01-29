@@ -31,10 +31,26 @@ async function generateProfileVariants() {
   const baseName = path.basename(sourceFile, path.extname(sourceFile));
 
   const targets = [
-    { out: path.join(imagesDir, `${baseName}-200.webp`), width: 200, format: "webp" },
-    { out: path.join(imagesDir, `${baseName}-400.webp`), width: 400, format: "webp" },
-    { out: path.join(imagesDir, `${baseName}-200.jpeg`), width: 200, format: "jpeg" },
-    { out: path.join(imagesDir, `${baseName}-400.jpeg`), width: 400, format: "jpeg" },
+    {
+      out: path.join(imagesDir, `${baseName}-200.webp`),
+      width: 200,
+      format: "webp",
+    },
+    {
+      out: path.join(imagesDir, `${baseName}-400.webp`),
+      width: 400,
+      format: "webp",
+    },
+    {
+      out: path.join(imagesDir, `${baseName}-200.jpeg`),
+      width: 200,
+      format: "jpeg",
+    },
+    {
+      out: path.join(imagesDir, `${baseName}-400.jpeg`),
+      width: 400,
+      format: "jpeg",
+    },
   ];
 
   const srcExists = await fileExists(src);

@@ -23,27 +23,30 @@
 
           var s = document.createElement("script");
           s.async = true;
-            s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
-            document.head.appendChild(s);
+          s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+          document.head.appendChild(s);
 
-            window.dataLayer = window.dataLayer || [];
-            window.gtag = function () {
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function () {
             window.dataLayer.push(arguments);
-            };
-            window.gtag("js", new Date());
-            window.gtag("config", GA_ID);
-          }
+          };
+          window.gtag("js", new Date());
+          window.gtag("config", GA_ID);
+        }
 
-          function loadGtm() {
-            if (window.__gtmLoaded) return;
-            window.__gtmLoaded = true;
+        function loadGtm() {
+          if (window.__gtmLoaded) return;
+          window.__gtmLoaded = true;
 
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            "gtm.start": new Date().getTime(),
+            event: "gtm.js",
+          });
 
-            var j = document.createElement("script");
-            j.async = true;
-            j.src = "https://www.googletagmanager.com/gtm.js?id=" + GTM_ID;
+          var j = document.createElement("script");
+          j.async = true;
+          j.src = "https://www.googletagmanager.com/gtm.js?id=" + GTM_ID;
           document.head.appendChild(j);
         }
 
