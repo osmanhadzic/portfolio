@@ -43,15 +43,13 @@ export const resources = {
 export type ProjectType =
   (typeof resources)["en"]["translation"]["projects"]["projects"][0];
 
-i18next
-  .use(initReactI18next)
-  .init({
-    lng: getStoredLanguage() ?? getBrowserLanguage(),
-    fallbackLng: "en",
-    resources,
-    interpolation: {
-      escapeValue: false,
-    },
-  });
+i18next.use(initReactI18next).init({
+  lng: getStoredLanguage() ?? getBrowserLanguage(),
+  fallbackLng: "en",
+  resources,
+  interpolation: {
+    escapeValue: false,
+  },
+});
 
 export default i18next;

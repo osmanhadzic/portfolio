@@ -66,6 +66,11 @@ const Header = () => {
               content="LafaBU9N3x5nwtSOc2vnA3on_V776QQIF6zzRRVyNPw"
             />
             <link rel="canonical" href="https://osman-hadzic.com/" />
+            <link rel="canonical" href="https://osman-hadzic.com/blog" />
+            <link
+              rel="canonical"
+              href="https://osman-hadzic.com/blog/hello-world"
+            />
           </Helmet>
         </HelmetProvider>
       </div>
@@ -141,7 +146,7 @@ const Header = () => {
       <div className="flex justify-center gap-5 bg-yellow pb-2.5 pt-20 dark:bg-[#494949]">
         <Icon
           className={clsx(
-            "h-full cursor-pointer text-[50px] text-gray-dark ",
+            "h-full cursor-pointer text-[50px] text-gray-dark",
             i18n.language === "en" && "brightness-50",
           )}
           icon="twemoji:flag-for-flag-united-kingdom"
@@ -150,7 +155,7 @@ const Header = () => {
         />
         <Icon
           className={clsx(
-            "h-full cursor-pointer text-[50px] text-gray-dark ",
+            "h-full cursor-pointer text-[50px] text-gray-dark",
             i18n.language === "bos" && "brightness-50",
           )}
           icon="twemoji:flag-for-flag-bosnia-and-herzegovina"
