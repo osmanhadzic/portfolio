@@ -1,9 +1,8 @@
-import { useContext } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 import Switch from "react-switch";
 import clsx from "clsx";
 import { useTranslation } from "react-i18next";
-import { Icon } from "@iconify/react";
-import { TypeAnimation } from "react-type-animation";
+import { Icon } from "@iconify/react/dist/offline";
 import { ThemeContext, ThemeContextInterface } from "@/contexts";
 import { HelmetProvider, Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
@@ -14,6 +13,46 @@ const Header = () => {
   ) as ThemeContextInterface;
 
   const { t, i18n } = useTranslation();
+
+  const setLanguage = (lng: "en" | "bos") => {
+    i18n.changeLanguage(lng);
+    try {
+      localStorage.setItem("ocode_language", lng);
+    } catch {
+      // Ignore.
+    }
+  };
+
+  const [TypeAnimationComponent, setTypeAnimationComponent] =
+    useState<React.ComponentType<any> | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    import("react-type-animation")
+      .then((mod) => {
+        if (!cancelled) {
+          setTypeAnimationComponent(() => mod.TypeAnimation);
+        }
+      })
+      .catch(() => {
+        // If the chunk fails to load, keep the fallback text.
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const titles = useMemo(() => {
+    const raw = t("basic_info.titles", { returnObjects: true });
+    return Array.isArray(raw) ? (raw as string[]) : [];
+  }, [t]);
+
+  const typeSequence = useMemo(
+    () => titles.flatMap((title) => [title, 1000]),
+    [titles],
+  );
 
   return (
     <>
@@ -47,15 +86,19 @@ const Header = () => {
             {t("basic_info.name")}
           </h1>
 
-          <TypeAnimation
-            sequence={t("basic_info.titles", { returnObjects: true }).flatMap(
-              (title: string) => [title, 1000],
-            )}
-            wrapper="span"
-            speed={50}
-            className="text-regular text-2xl text-gray-dark dark:text-white"
-            repeat={Infinity}
-          />
+          {TypeAnimationComponent ? (
+            <TypeAnimationComponent
+              sequence={typeSequence}
+              wrapper="span"
+              speed={50}
+              className="text-regular text-2xl text-gray-dark dark:text-white"
+              repeat={Infinity}
+            />
+          ) : (
+            <span className="text-regular text-2xl text-gray-dark dark:text-white">
+              {titles[0] ?? ""}
+            </span>
+          )}
 
           <Link
             to="/blog"
@@ -101,8 +144,8 @@ const Header = () => {
             "h-full cursor-pointer text-[50px] text-gray-dark ",
             i18n.language === "en" && "brightness-50",
           )}
-          icon="twemoji-flag-for-flag-united-kingdom"
-          onClick={() => i18n.changeLanguage("en")}
+          icon="twemoji:flag-for-flag-united-kingdom"
+          onClick={() => setLanguage("en")}
           aria-label="Change language to English" // Accessibility label
         />
         <Icon
@@ -110,8 +153,8 @@ const Header = () => {
             "h-full cursor-pointer text-[50px] text-gray-dark ",
             i18n.language === "bos" && "brightness-50",
           )}
-          icon="twemoji-flag-for-flag-bosnia-and-herzegovina"
-          onClick={() => i18n.changeLanguage("bos")}
+          icon="twemoji:flag-for-flag-bosnia-and-herzegovina"
+          onClick={() => setLanguage("bos")}
           aria-label="Change language to Bosnian" // Accessibility label
         />
       </div>

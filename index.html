@@ -10,47 +10,62 @@
     <link rel="icon" type="image/svg+xml" href="/code-icon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OCode</title>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-17W1Q5VF0M"
-    ></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-17W1Q5VF0M");
+      // Defer analytics until cookie consent to reduce unused JS and avoid bfcache blockers.
+      // NOTE: If you rely on GTM/GA for immediate pageview events, this will delay them until consent.
+      (function () {
+        var GA_ID = "G-17W1Q5VF0M";
+        var GTM_ID = "GTM-N9VWLHBT";
+
+        function loadGtag() {
+          if (window.__gtagLoaded) return;
+          window.__gtagLoaded = true;
+
+          var s = document.createElement("script");
+          s.async = true;
+            s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+            document.head.appendChild(s);
+
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = function () {
+            window.dataLayer.push(arguments);
+            };
+            window.gtag("js", new Date());
+            window.gtag("config", GA_ID);
+          }
+
+          function loadGtm() {
+            if (window.__gtmLoaded) return;
+            window.__gtmLoaded = true;
+
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+
+            var j = document.createElement("script");
+            j.async = true;
+            j.src = "https://www.googletagmanager.com/gtm.js?id=" + GTM_ID;
+          document.head.appendChild(j);
+        }
+
+        window.__loadAnalytics = function () {
+          loadGtag();
+          loadGtm();
+        };
+
+        // If consent already granted, load after first paint.
+        try {
+          if (localStorage.getItem("cookiesAccepted") === "true") {
+            setTimeout(window.__loadAnalytics, 0);
+          }
+        } catch (e) {
+          // If storage is blocked, do nothing.
+        }
+      })();
     </script>
-    <!-- Google Tag Manager -->
-    <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-N9VWLHBT");
-    </script>
-    <!-- End Google Tag Manager -->
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript
-      ><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-N9VWLHBT"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-      ></iframe
-    ></noscript>
-    <!-- End Google Tag Manager (noscript) -->
 
     <!-- Cookie Consent Dialog -->
     <dialog
@@ -135,6 +150,9 @@
         .getElementById("accept-dialog")
         .addEventListener("click", function () {
           localStorage.setItem("cookiesAccepted", "true");
+          if (typeof window.__loadAnalytics === "function") {
+            window.__loadAnalytics();
+          }
           document.getElementById("cookie-consent-dialog").close(); // Close the dialog box
         });
 

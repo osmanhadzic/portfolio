@@ -31,4 +31,4 @@ User-agent: omgilibot
 Disallow: /
 
 # Keep sitemap discoverable for normal search engines.
-Sitemap: https://ocode.dev/sitemap.xml
+Sitemap: https://osman-hadzic.com/sitemap.xml

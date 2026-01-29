@@ -1,9 +1,13 @@
-import { Icon } from "@iconify/react";
+import { Icon } from "@iconify/react/dist/offline";
 import { useTranslation } from "react-i18next";
 import { HelmetProvider, Helmet } from "react-helmet-async";
 
 const AboutMe = () => {
   const { t } = useTranslation();
+
+  const originalImageName = String(t("about_me.image"));
+  const imageBaseName = originalImageName.replace(/\.[^/.]+$/, "");
+  const profileAlt = "Profile";
 
   return (
     <section className="bg-gray-800 dark:bg-gray-900 relative py-5 md:py-10">
@@ -30,12 +34,24 @@ const AboutMe = () => {
       <div className="flex flex-col items-center justify-center gap-10 px-10 pb-10 md:flex-row md:pb-0">
         <div className="text-center md:w-1/3">
           <div className="bg-gray-100 dark:bg-gray-800 mb-[30px] mt-[55px] inline-block p-4 pb-10 shadow-card">
-            <img
-              src={`images/${t("about_me.image")}`}
-              alt="Profile"
-              height="250px"
-              className="w-[200px] rounded"
-            />
+            <picture>
+              <source
+                type="image/webp"
+                srcSet={`/images/${imageBaseName}-200.webp 200w, /images/${imageBaseName}-400.webp 400w`}
+                sizes="200px"
+              />
+              <img
+                src={`/images/${imageBaseName}-200.jpeg`}
+                srcSet={`/images/${imageBaseName}-200.jpeg 200w, /images/${imageBaseName}-400.jpeg 400w`}
+                sizes="200px"
+                alt={profileAlt}
+                width={200}
+                height={200}
+                loading="lazy"
+                decoding="async"
+                className="w-[200px] rounded"
+              />
+            </picture>
             <div className="mt-3 flex justify-between">
               {t("about_me.tech_stacks", { returnObjects: true })?.map(
                 (tech: string) => (
