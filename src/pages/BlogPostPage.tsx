@@ -2,11 +2,14 @@ import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { Link, useParams } from "react-router-dom";
 import { loadPostBySlug, type BlogPost } from "@/blog/loadPosts";
+import { useCanonical } from "@/hooks";
 
 export default function BlogPostPage() {
   const { slug } = useParams<{ slug: string }>();
   const [post, setPost] = useState<BlogPost | null>(null);
   const [notFound, setNotFound] = useState(false);
+
+  useCanonical(slug ? `/blog/${slug}` : "/blog");
 
   useEffect(() => {
     void (async () => {

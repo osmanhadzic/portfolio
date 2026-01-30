@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { loadAllPosts, type BlogPost } from "@/blog/loadPosts";
+import { useCanonical } from "@/hooks";
 
 export default function BlogIndexPage() {
+  useCanonical("/blog");
   const [posts, setPosts] = useState<BlogPost[]>([]);
 
   useEffect(() => {
