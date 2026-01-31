@@ -8,7 +8,7 @@ const Resume = () => {
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href =
-      "https://drive.google.com/file/d/1TvYg9Dp70g-_V69qHfSt-C1gzGOU84g1/view?usp=sharing";
+      "https://drive.google.com/file/d/1Wff-7_tu1aBzwEF89TTf8xUQta47oD09/view?usp=sharing";
     link.download = "Osman_Hadzic_CV.pdf";
     link.target = "_blank";
     link.click();
