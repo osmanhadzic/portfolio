@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { loadAllPosts, type BlogPost } from "@/blog/loadPosts";
 import { useCanonical } from "@/hooks";
 
@@ -15,6 +16,14 @@ export default function BlogIndexPage() {
   }, []);
 
   return (
+    <>
+      <Helmet>
+        <title>Blog — Osman Hadzic</title>
+        <meta name="description" content="Technical blog by Osman Hadzic — .NET and frontend engineering topics, tutorials and project write-ups." />
+        <meta property="og:title" content="Blog — Osman Hadzic" />
+        <meta property="og:description" content="Technical blog by Osman Hadzic — .NET and frontend engineering topics, tutorials and project write-ups." />
+        <meta property="og:type" content="website" />
+      </Helmet>
     <section className="min-h-screen bg-yellow px-4 py-10 dark:bg-[#494949] sm:px-6 lg:px-8">
       <div className="mx-auto max-w-5xl">
         {/* Header */}
@@ -64,5 +73,6 @@ export default function BlogIndexPage() {
         )}
       </div>
     </section>
+    </>
   );
 }

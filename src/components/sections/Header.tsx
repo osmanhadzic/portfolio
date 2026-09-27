@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { useTranslation } from "react-i18next";
 import { Icon } from "@iconify/react/dist/offline";
 import { ThemeContext, ThemeContextInterface } from "@/contexts";
-import { HelmetProvider, Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -57,16 +57,28 @@ const Header = () => {
   return (
     <>
       <div>
-        <HelmetProvider>
-          <Helmet>
-            <title>OCode</title>
-            <meta name="keywords" content=".NET developer" />
-            <meta
-              name="google-site-verification"
-              content="LafaBU9N3x5nwtSOc2vnA3on_V776QQIF6zzRRVyNPw"
-            />
-          </Helmet>
-        </HelmetProvider>
+        <Helmet>
+          <title>Osman Hadzic — Software engineer (California / Remote)</title>
+          <meta name="description" content="Osman Hadzic — Software engineer available for California-based and remote roles. View portfolio, projects, and resume." />
+          <meta name="keywords" content=".NET developer, frontend engineer, React, TypeScript, California, remote" />
+          <meta
+            name="google-site-verification"
+            content="LafaBU9N3x5nwtSOc2vnA3on_V776QQIF6zzRRVyNPw"
+          />
+          <script type="application/ld+json">{JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Osman Hadzic",
+            url: "https://osman-hadzic.com/",
+            jobTitle: "Software engineer",
+            description: "Frontend engineer available for California-based and remote roles. Skills: .NET, React, TypeScript.",
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "California",
+              addressRegion: "CA",
+            },
+          })}</script>
+        </Helmet>
       </div>
       <header className="h-[650px] w-[100%] bg-yellow dark:bg-[#494949]">
         <div className="flex h-full flex-col items-center justify-center gap-5">
@@ -84,7 +96,6 @@ const Header = () => {
           <h1 className="text-4xl font-bold text-gray-dark dark:text-white">
             {t("basic_info.name")}
           </h1>
-
           {TypeAnimationComponent ? (
             <TypeAnimationComponent
               sequence={typeSequence}
@@ -107,6 +118,17 @@ const Header = () => {
             <Icon icon="la:newspaper" className="text-[20px]" />
             <span className="font-medium">Blog</span>
           </Link>
+
+          <a
+            href="https://drive.google.com/file/d/1Wff-7_tu1aBzwEF89TTf8xUQta47oD09/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded border border-gray-dark px-6 py-2 text-gray-dark shadow-card hover:shadow-card-hover dark:border-white dark:text-white"
+            aria-label="Open resume in new tab"
+          >
+            <Icon icon="mdi:download" className="text-[20px]" />
+            <span className="font-medium">Resume</span>
+          </a>
 
           <label htmlFor="themeSwitch" className="flex items-center">
             <span className="sr-only">Toggle dark theme</span>{" "}

@@ -27,6 +27,7 @@ export interface BlogPost {
   title: string;
   date: string;
   content: string;
+  canonical?: string;
 }
 
 type MarkdownImport = () => Promise<string>;
@@ -53,12 +54,17 @@ async function parsePost(slug: string, raw: string): Promise<BlogPost> {
       : "Untitled";
   const date =
     typeof parsed.data["date"] === "string" ? parsed.data["date"] : "No date";
+  const canonical =
+    typeof parsed.data["canonical"] === "string"
+      ? parsed.data["canonical"]
+      : undefined;
 
   return {
     slug,
     title,
     date,
     content: parsed.content,
+    canonical,
   };
 }
 
