@@ -3,13 +3,15 @@ import ReactMarkdown from "react-markdown";
 import { Link, useParams } from "react-router-dom";
 import { loadPostBySlug, type BlogPost } from "@/blog/loadPosts";
 import { useCanonical } from "@/hooks";
+import { Helmet } from "react-helmet-async";
 
 export default function BlogPostPage() {
   const { slug } = useParams<{ slug: string }>();
   const [post, setPost] = useState<BlogPost | null>(null);
   const [notFound, setNotFound] = useState(false);
-
-  useCanonical(slug ? `/blog/${slug}` : "/blog");
+  // Compute canonical source: prefer frontmatter `canonical`, fallback to slug or blog index.
+  const canonicalSource = post?.canonical ?? (slug ? `/blog/${slug}` : "/blog");
+  useCanonical(canonicalSource);
 
   useEffect(() => {
     void (async () => {
@@ -66,6 +68,25 @@ export default function BlogPostPage() {
   }
 
   return (
+    <>
+      <Helmet>
+        <title>{post.title} — Osman Hadzic</title>
+        <meta
+          name="description"
+          content={
+            post.content
+              .replace(/[#_*`>\[\]\(\)\n]/g, " ")
+              .trim()
+              .slice(0, 160)
+          }
+        />
+        <meta property="og:title" content={post.title} />
+        <meta
+          property="og:description"
+          content={post.content.replace(/[#_*`>\[\]\(\)\n]/g, " ").trim().slice(0, 160)}
+        />
+        <meta property="og:type" content="article" />
+      </Helmet>
     <div className="min-h-screen bg-yellow py-10 dark:bg-[#494949]">
       <div className="mx-auto flex w-full justify-center px-4 sm:px-6 lg:px-8">
         <div className="w-full max-w-5xl">
@@ -167,5 +188,6 @@ export default function BlogPostPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

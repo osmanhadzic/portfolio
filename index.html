@@ -9,16 +9,26 @@
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/code-icon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OCode</title>
+    <title>Osman Hadzic</title>
     
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-17W1Q5VF0M"></script>
+    <!-- Canonical for crawlers: set to the requested path before React hydrates -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-17W1Q5VF0M');
+      (function () {
+        try {
+          var base = "https://osman-hadzic.com";
+          var path = location.pathname || "/";
+          var href = base + (path === "/" ? "" : path.replace(/\/+$/, ""));
+          if (href === base) href = base + "/";
+          var existing = document.querySelector('link[rel="canonical"]');
+          if (existing) existing.parentNode.removeChild(existing);
+          var l = document.createElement("link");
+          l.rel = "canonical";
+          l.href = href;
+          document.head.appendChild(l);
+        } catch (e) {
+          // ignore
+        }
+      })();
     </script>
 
     <script>

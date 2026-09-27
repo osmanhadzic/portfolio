@@ -2,11 +2,13 @@ import "./i18n/config";
 import { Suspense, lazy } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import HomePage from "@/pages/HomePage";
+import useGtagPageView from "@/hooks/useGtagPageView";
 
 const BlogIndexPage = lazy(() => import("@/pages/BlogIndexPage"));
 const BlogPostPage = lazy(() => import("@/pages/BlogPostPage"));
 
 function App() {
+  useGtagPageView();
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
