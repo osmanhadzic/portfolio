@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { Link, useParams } from "react-router-dom";
 import { loadPostBySlug, type BlogPost } from "@/blog/loadPosts";
 import { useCanonical } from "@/hooks";
@@ -115,6 +116,7 @@ export default function BlogPostPage() {
 
             <div className="space-y-4 text-gray-dark dark:text-white">
               <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
                 components={{
                   h1: ({ ...props }) => (
                     <h1
@@ -161,6 +163,32 @@ export default function BlogPostPage() {
                     />
                   ),
                   li: ({ ...props }) => <li className="my-1" {...props} />,
+                  table: ({ ...props }) => (
+                    <div className="my-6 overflow-x-auto rounded border border-gray-light dark:border-[#666]">
+                      <table
+                        className="w-full min-w-[28rem] border-collapse text-left text-sm"
+                        {...props}
+                      />
+                    </div>
+                  ),
+                  thead: ({ ...props }) => (
+                    <thead
+                      className="bg-gray-light dark:bg-[#494949]"
+                      {...props}
+                    />
+                  ),
+                  th: ({ ...props }) => (
+                    <th
+                      className="border-b border-gray-light px-4 py-3 font-semibold dark:border-[#666]"
+                      {...props}
+                    />
+                  ),
+                  td: ({ ...props }) => (
+                    <td
+                      className="border-b border-gray-light px-4 py-3 dark:border-[#666]"
+                      {...props}
+                    />
+                  ),
                   blockquote: ({ ...props }) => (
                     <blockquote
                       className="border-l-4 border-gray-dark bg-gray-light py-2 pl-4 italic text-gray dark:border-white dark:bg-[#494949] dark:text-gray-light"
